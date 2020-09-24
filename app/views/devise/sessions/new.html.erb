@@ -1,7 +1,7 @@
 <%= image_tag 'logo.png', alt:"positive-learning", class: "service_logo" %>
 
 <div class= "sign_in_up">
-    <%= link_to "Click here for sign up", new_user_registration_path %>
+    <%= link_to "Click here for sign up", new_user_registration_path , class: "clilkHere"%>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
