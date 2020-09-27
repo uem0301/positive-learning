@@ -65,3 +65,11 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
+  ja:
+    activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              email: 
+                taken: "このemailは登録済みです"
