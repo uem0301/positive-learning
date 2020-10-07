@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+.items{
+  display:flex;
+  margin: 40px 0 0 100px;
+  text-align: center;
+  flex-wrap: wrap;
+  .content{
+    margin: 25px 40px 0 0;
+    &__image{
+      margin-bottom: 5px;
+    }
+    &__name{
+      margin-bottom:5px;
+      border: 1px solid gray;
+    }
+    &__explanation{
+      word-break: normal;
+      width:150px;
+    }
+  }
+}

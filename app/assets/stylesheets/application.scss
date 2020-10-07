@@ -1,2 +1,10 @@
 @import "reset";
-@import "modules/user";
+@import "modules/users/user";
+
+// collection投稿ページ
+@import "modules/collections/collection_new";
+@import "modules/collections/collection_index";
+
+// item投稿ページ
+@import "modules/items/item_index";
+@import "modules/items/item_new";

@@ -1,0 +1,10 @@
+<%= form_for @item, html:{class: "item__form"} do |f| %>
+  アイテムのタイトル<%= f.text_field :title, class:"item__form__name" %><br>
+  アイテムの説明<%= f.text_area :explanation, class:"item__form__explanation",size: "19x2" %>
+  <%= f.label :image, "画像選択", class: "item__form__label" %>
+    <%= f.file_field :image, class:"item__form__label__file" %>
+  <%= f.hidden_field :user_id, value: current_user.id%>
+  <%= f.hidden_field :collection_id, value: @collection.id%>
+    <%= f.submit "create  item", class: "item__form__submit"  %>
+<% end %>
+
