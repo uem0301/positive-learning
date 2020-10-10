@@ -34,12 +34,11 @@ class CollectionsController < ApplicationController
   private
 
   def collection_params
-    params.require(:collection).permit(:name,:explanation,:user_id,:image,items_attributes: [:collection_id])
+    params.require(:collection).permit(:name,:explanation,:user_id,:image)
   end
 
   def transition_destination
     @collection = Collection.new
-    @collection.items.build
     unless user_signed_in?
       redirect_to root_path
     end

@@ -1,5 +1,14 @@
+body{
+  box-sizing:box;
+  padding-top: 0px;
+}
+
+textarea,input{
+  width:190px;
+}
+
 .item__form{
-  margin:5px 0 0 170px;
+  margin:5px 0 0 150px;
   display:flex;
   justify-content: center;
   flex-direction: column;
@@ -10,12 +19,46 @@
     border: 1px solid gray;
     padding: 10px;
     margin-top: 25px;
-    width: 165px;
+    width: 190px;
     text-align: center;
-    &__file{
-      margin: 20px 0 0 170px;
-      display:none;
+  }
+  &__videoLabel{
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 25px;
+    width: 190px;
+    text-align: center;
+      &__field{
+        height:50px;
+        width:190px;
+      }
+  }
+  &__temporary{
+    margin-top: 15px;
+    width: 190px;
+    display: flex;
+    &--backBlack{
+      margin-right: 5px;
+      border: 1px solid gray;
+      width: 80px;
+      text-align: center;
+      color: white;
+      background-color: gray;
     }
+    &--borderBox{
+      border: 1px solid;
+      width: 120px;
+      text-align: left;
+      padding-left: 3px;
+    }
+
+  }
+  
+  select{
+    margin-top: 15px;
+    width: 160px;
   }
   &__submit{
     margin-top: 20px;

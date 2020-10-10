@@ -2,9 +2,7 @@
   部屋の名前<%= f.text_field :name, class:"collection__form__name" %><br>
   部屋の説明<%= f.text_area :explanation, class:"collection__form__explanation",size: "19x2" %>
   <%= f.label :image, "画像選択", class: "collection__form__label" %>
-    <%= f.file_field :image, class:"collection__form__label__file" %>
+    <%= f.file_field :image, class:"collection__form__label__file" ,style: "display:none;"%>
   <%= f.hidden_field :user_id, value: current_user.id%>
-  <%= f.fields_for :items do |t| %>
-  <% end %>
   <%= f.submit "create  collection", class: "collection__form__submit"  %>
 <% end %>

@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to items_path
     else
-      reder :new
+      render :new
     end
   end
   
@@ -24,6 +24,15 @@ class ItemsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @item.update(article_params) && @item.video.recreate_versions!
+        format.html { redirect_to @item, notice: 'Article was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def show

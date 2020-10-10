@@ -1,5 +1,5 @@
 .collection__form{
-  margin:5px 0 0 170px;
+  margin:5px 0 0 86px;
   display:flex;
   justify-content: center;
   flex-direction: column;
@@ -10,11 +10,10 @@
     border: 1px solid gray;
     padding: 10px;
     margin-top: 25px;
-    width: 165px;
+    width: 190px;
     text-align: center;
     &__file{
-      margin: 20px 0 0 170px;
-      display:none;
+
     }
   }
   &__submit{
