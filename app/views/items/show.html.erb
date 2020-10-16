@@ -1,5 +1,3 @@
 <p>
-  <%= link_to @item.video_url.to_s do %>
-   <%= video_tag(@item.video.to_s) %>
-  <% end %> 
-</p> 
+  <%= video_tag @item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true %>
+</p>

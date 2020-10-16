@@ -1,7 +1,7 @@
 class VideoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
   require 'streamio-ffmpeg'
   # Choose what kind of storage to use for this uploader:
   storage :file
