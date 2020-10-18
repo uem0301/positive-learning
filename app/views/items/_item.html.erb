@@ -1,10 +1,14 @@
 <div class= "content">
-  <p> <%= image_tag item.image.url, class:"content__image" %> </p>
-  <p> <%= video_tag item.video.url, class:"content__video" %> </p>
+  <% if item.image.present? %>
+    <p> <%= image_tag item.image.url, class:"content__image" %> </p>
+  <% end %>
+  <% if item.video.present? %>
+    <p> <%= video_tag @item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__image" %></p>
+  <% end %>
   <div class= "content__name">
-  <p><%= item.title %> </p>
+    <p><%= item.title %> </p>
   </div>
   <div class= "content__explanation">
-  <p><%= item.explanation %> </p>
+    <p><%= item.explanation %> </p>
   </div>
 </div>

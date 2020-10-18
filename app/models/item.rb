@@ -3,5 +3,6 @@ class Item < ApplicationRecord
   belongs_to  :collection
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
-  validates :title,:video, presence: true, unless: :image?, unless: :video?
+  validates :title, presence: true, unless: :image?
+  validates :video, presence: true, unless: :video?
 end
