@@ -3,21 +3,26 @@
 }
 .items{
   display:flex;
-  margin: 40px 0 0 100px;
+  margin-top: 40px;
   text-align: center;
-  flex-wrap: wrap;
+  max-width: 800px;
   .content{
-    margin: 25px 40px 0 0;
+    margin: 25px 60px 0 0;
     &__image{
       margin-bottom: 5px;
     }
+    &__video{
+      margin-top: 10px;
+    }
     &__name{
+      width: 220px;
       margin-bottom:5px;
       border: 1px solid gray;
     }
     &__explanation{
       word-break: normal;
       width:150px;
+      margin: 10px 0 5px 30px;
     }
   }
 }

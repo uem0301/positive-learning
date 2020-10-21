@@ -3,7 +3,7 @@
     <p> <%= image_tag item.image.url, class:"content__image" %> </p>
   <% end %>
   <% if item.video.present? %>
-    <p> <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__image" %></p>
+    <p> <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
   <% end %>
   <div class= "content__name">
     <p><%= item.title %> </p>

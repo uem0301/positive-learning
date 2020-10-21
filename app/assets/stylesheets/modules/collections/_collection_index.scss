@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
+
 .collections{
+  max-width: 800px;
   display:flex;
   margin: 40px 0 0 100px;
   text-align: center;
