@@ -1,0 +1,25 @@
+.collection__form{
+  margin:5px 0 0 86px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &__label{
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 25px;
+    width: 190px;
+    text-align: center;
+    &__file{
+
+    }
+  }
+  &__submit{
+    margin-top: 20px;
+    width: 190px;
+  }
+
+
+}

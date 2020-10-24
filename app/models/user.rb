@@ -6,6 +6,7 @@ class User < ApplicationRecord
         #  :confirmable, :lockable, :timeoutable, :trackable
   validates :name, presence: true
 
-    # has_many :collections,:relationships,:items,:comments
+  has_many :collections
+  has_many :items
 
 end

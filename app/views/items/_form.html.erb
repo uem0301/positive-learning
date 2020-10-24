@@ -1,0 +1,20 @@
+<%= form_for @item, html:{class: "item__form"} do |f| %>
+ <%= render 'layouts/error_messages', model: f.object %> 
+  タイトル<%= f.text_field :title, class:"item__form__name" %><br>
+  アイテムの説明<%= f.text_area :explanation, class:"item__form__explanation",size: "19x2" %>
+  <%= f.label :image, "画像選択", class: "item__form__label" %>
+    <%= f.file_field :image, class:"item__form__label__file", style: "display:none;" %>
+  <%= f.label :video, "動画選択", class:"item__form__videoLabel" %>
+    <%= f.file_field :video, accept:'video/*',class:"item__form__videoLabel__field",style: "display:none;" %>
+  <%= f.hidden_field :user_id, value: current_user.id%>
+  <%= f.collection_select(:collection_id, Collection.all, :id, :name, prompt:true, class: "item__form__select") %>
+  <div class= "item__form__temporary">
+    <div class= "item__form__temporary--backBlack">
+      ジャンル
+    </div>
+    <div class= "item__form__temporary--borderBox">
+      例) Ruby
+    </div>
+  </div>
+  <%= f.submit "create  item", class: "item__form__submit"  %>
+<% end %>
