@@ -1,5 +1,7 @@
 @import "reset";
 @import "modules/users/user";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // collection投稿ページ
 @import "modules/collections/collection_new";
@@ -8,3 +10,6 @@
 // item投稿ページ
 @import "modules/items/item_index";
 @import "modules/items/item_new";
+
+// Topページ
+@import "modules/pages/page_index";
