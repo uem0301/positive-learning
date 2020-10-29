@@ -1,2 +1,27 @@
-<h1>こんにちは、<%= current_user.name %>さん</h1>
-<p>ユーザー用ページです。</p>
+<div class="menu">
+  <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+  <div class="login_container">
+    <div class="create_panel">
+      <ul>
+        <li>
+          <%= link_to 'Follow', root_path , class: "links_box" %> 
+        </li>
+        <li>
+          <%= link_to 'Follower', root_path , class: "links_box" %> 
+        </li>
+        <li>
+          <%= link_to 'Create Collection', new_collection_path , class: "links_box" %> 
+        </li>
+        <li>
+          <%= link_to 'Create Item', new_item_path , class: "links_box" %> 
+        </li>
+        <li>
+          <%= link_to 'Profile Settings', root_path , class: "links_box" %> 
+        </li>
+        <li>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "links_box" %> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

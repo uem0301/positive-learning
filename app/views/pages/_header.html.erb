@@ -1,0 +1,61 @@
+<% if current_user %>
+  <div class="upper_block">
+    <div class="flex_wrapper_left">
+      <div class="menu_panel_button">
+        <div class= "icon_menu">
+          <%= link_to pages_show_path(current_user) do %>
+            <i class= "fas fa-bars fa-2x" ></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="logo">
+        <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+      </div>
+    </div>
+    <div class= "flex_wrapper_right">
+      <div class= "links">
+        <ul>
+          <li>
+            <%= link_to 'COLLECTION', collections_path, class: "links_collection" %> 
+          </li>
+          <li>
+            <%= link_to 'ITEM', items_path, class: "links_item" %> 
+          </li>
+          <li>
+            <%= link_to 'CATEGORY', root_path, class: "links_category" %> 
+          </li>
+        </ul>
+      </div>
+      <div class= "search">
+        <form id="search_form" action="/search" accept-charset="UTF-8" method="get",class= "s">
+          <span class="icon-search_icon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="text" name="q" id="q" placeholder="入力してください" class="black_input">
+        </form>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="upper_block">
+    <div class="flex_wrapper_left">
+      <div class="logo">
+        <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+      </div>
+    </div>
+    <div class= "flex_wrapper_right">
+      <div class= "links_box">
+        <%= link_to 'New Registration', new_user_registration_path, class: "links_registration" %> 
+        <%= link_to 'Login', new_user_session_path, class: "links_login" %> 
+      </div>
+      <div class= "search">
+        <form id="search_form" action="/search" accept-charset="UTF-8" method="get",class= "s">
+          <span class="icon-search_icon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="text" name="q" id="q" placeholder="入力してください" class="black_input">
+        </form>
+      </div>
+    </div>
+  </div>
+ <% end %>

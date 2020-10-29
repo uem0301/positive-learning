@@ -1,0 +1,42 @@
+*{
+  box-sizing:border-box;
+}
+
+.upper_block{
+  width: 100%;
+  padding: 0 20px;
+  .flex_wrapper_right{
+    .links_box{
+      margin: 15px 10px 15px 50px;
+      .links_registration{
+        display: inline-block;
+        font-size: 12px;
+        padding: 8px 20px;
+        margin: 0 3px;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        background-color: #00CCFF
+        ;
+        color: #fff;
+        line-height: 1.2em;
+        }
+      
+      .links_login{
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 12px;
+        padding: 8px 20px;
+        margin: 0 3px;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        background-color: #00CCFF
+        ;
+        color: #fff;
+        line-height: 1.2em;
+      }
+    }
+  }
+}
+
