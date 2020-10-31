@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'pages/show'
   resources :collections
   resources :items
+  resources :users, only:[:index]
 end
