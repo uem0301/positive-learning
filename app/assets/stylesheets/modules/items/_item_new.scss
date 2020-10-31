@@ -57,13 +57,24 @@ textarea,input{
   }
   
   select{
-    margin-top: 15px;
+    margin: 15px 0;
     width: 160px;
   }
   &__submit{
-    margin-top: 20px;
+    margin-top: 10px;
     width: 190px;
   }
 
+  .tag_field{
+    padding-top: 10px;
+  }
+  .label_check_box{
+    padding-right: 85px;
+  }
+  .check_box{
+    margin: 0px auto;
+    bottom: 1px;
+    float: left;
 
+  }
 }

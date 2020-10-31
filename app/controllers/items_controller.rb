@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @tags = Tag.all
     @collection = Collection.new
   end
 
@@ -19,6 +20,7 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    @tags = Tag.all
     # 編集時使用予定
     # @item = Item.find(params[:image,:video])
   end
@@ -45,7 +47,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title,:explanation,:image,:video,:user_id,:collection_id)
+    params.require(:item).permit(:title,:explanation,:image,:video,:user_id,:collection_id, tag_ids: [])
   end
 
   def transition_destination
