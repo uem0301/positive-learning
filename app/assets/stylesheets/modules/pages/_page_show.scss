@@ -1,0 +1,48 @@
+*{
+  box-sizing: border-box;
+}
+
+.menu{
+  height: 100vh;
+  .login_container{
+    height: 100vh;
+    .create_panel{
+      padding: 80px 40px 0 160px;
+      font: inherit;
+      font-size: 100%;
+      vertical-align: baseline;
+      ul{
+        margin-bottom: 20px;
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        li{
+          margin-bottom: 50px;
+          width: 33%;
+          padding: 1%;
+          text-align: center;
+          line-height: 1.4em;
+          .links_box{
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            color: #fff;
+            font-size: 14px;
+            border: none;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-appearance: none;
+            color: #ddd;
+            border: 1px solid #ddd;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #4169e1;
+          }
+        }
+      }
+    }
+
+  }
+}

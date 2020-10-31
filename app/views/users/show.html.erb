@@ -1,5 +1,5 @@
 <div class= "container">
-  <%= render partial: 'header' %>
+  <%= render partial: 'pages/header' %>
   <div class= "layout_wrapper">
     <div class= "left_layout">
       <section class= "base_container">
@@ -9,7 +9,7 @@
             <span>ユーザー</span>
             <% if user_signed_in? && current_user %>
               <p class="name"> 
-                <%= current_user.name %>
+                <%= @user.name %>
               </p>
             <% end %>
           </div>
@@ -21,17 +21,20 @@
           <li>
             <p class="title">following</p>
             <div class="description">
-              <a href="#"></a>
+              <a href="/users?following=1&user_id=<%=@user.id%>"><span id="following"><%= @user.following.count %></span>人</a>
             </div>
           </li>
           <li>
             <p class="title">follower</p>
             <div class="description">
-              <a href="#"></a>
+              <a href="/users?follower=1&user_id=<%=@user.id%>"><span id="follower"><%= @user.followers.count %></span>人</a>
             </div>
           </li>
         </ul>
       </section>
+      <div>
+        <%= render "follow_form" %>
+      </div>
     </div>
     <div class="center_layout">
       <div class="swiper_container">

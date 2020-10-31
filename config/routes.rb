@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   get 'pages/show'
   resources :collections
   resources :items
+  resources :users, only:[:index, :show] do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end

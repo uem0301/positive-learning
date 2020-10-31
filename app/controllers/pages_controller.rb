@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]  
 
   def index
+    @collections = Collection.includes(:items).order('created_at DESC')
+    @items = Item.order('created_at DESC')
   end
 
   def show
