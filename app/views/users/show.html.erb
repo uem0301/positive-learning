@@ -1,0 +1,75 @@
+<div class= "container">
+<%if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+<%end%>
+  <%= render partial: 'pages/header' %>
+  <div class= "layout_wrapper">
+    <div class= "left_layout">
+      <section class= "base_container">
+        <div class= "user">
+          <i class="fas fa-user fa-3x"></i>
+          <div class="text">
+            <span>ユーザー</span>
+            <% if user_signed_in? && current_user %>
+              <p class="name"> 
+                <%= current_user.name %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </section>
+      <section class="follow_container">
+        <p class="container_title">status</p>
+        <ul>
+          <li>
+            <p class="title">following</p>
+            <div class="description">
+              <a href="#"><span id="following"><%= @user.following.count %></span></a>
+            </div>
+          </li>
+          <li>
+            <p class="title">follower</p>
+            <div class="description">
+              <a href="#"><span id="follower"><%= @user.followers.count %></span></a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div>
+        <%= render "follow_form" %>
+      </div>
+    </div>
+    <div class="center_layout">
+      <div class="swiper_container">
+        <div class="swiper_slide">
+          <div class="timeline_container">
+            <div class="timeline_head">新規投稿</div> 
+              <div class="timeline_card">
+                <% @collections.each do |collection| %>
+                  <% if collection.image.present?%>
+                    <p><%= image_tag collection.image.url, class:"content__image" %></p>
+                  <div class= "content__explanation">
+                    <p><%= collection.explanation %> </p>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="timeline_card_video">
+                <% @items.each do |item| %>
+                  <% if item.image.present? %>
+                    <p><%= image_tag item.image.url, class:"content__image" %></p>
+                  <% end %>
+                  <% if item.video.present? %>
+                    <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "50%", width: "50%" %>
+                  <% end %>
+                    <div class= "content__explanation">
+                      <p><%= item.explanation %> </p>
+                    </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
