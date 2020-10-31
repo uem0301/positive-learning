@@ -35,6 +35,34 @@
     </div>
     <div class="center_layout">
       <div class="swiper_container">
+        <div class="swiper_slide">
+          <div class="timeline_container">
+            <div class="timeline_head">新規投稿</div> 
+              <div class="timeline_card">
+                <% @collections.each do |collection| %>
+                  <% if collection.image.present?%>
+                    <p><%= image_tag collection.image.url, class:"content__image" %></p>
+                  <div class= "content__explanation">
+                    <p><%= collection.explanation %> </p>
+                  </div>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="timeline_card_video">
+                <% @items.each do |item| %>
+                  <% if item.image.present? %>
+                    <p><%= image_tag item.image.url, class:"content__image" %></p>
+                  <% end %>
+                  <% if item.video.present? %>
+                    <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "50%", width: "50%" %>
+                  <% end %>
+                    <div class= "content__explanation">
+                      <p><%= item.explanation %> </p>
+                    </div>
+                <% end %>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

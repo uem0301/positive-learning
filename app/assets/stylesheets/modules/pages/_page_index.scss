@@ -165,12 +165,48 @@
       width: 100vw;
       padding: 40px;
       background-color:#EEEEEE;
-      height:100vw;
+      height:100%;
+      overflow: scroll;
       .swiper_container{
         margin: 0 auto;
         position: relative;
         overflow: hidden;
         z-index: 1;
+        .swiper_slide{
+          width: 90%;
+          height: 100%;
+          position: relative;
+          .timeline_container{
+            .timeline_head{
+              font-size: 20px;
+              margin: 0 0 15px 0;
+              text-align: center;
+            }
+            .timeline_card{
+              padding: 10px;
+              background-color: #fff;
+              border: 1px solid #ddd;
+              margin-bottom: 30px;
+            }
+            .timeline_card_video{
+              padding: 10px;
+              background-color: #fff;
+              border: 1px solid #ddd;
+              margin: 60px 0;
+            }
+            .content__explanation{
+              border-bottom: 1px solid black;
+              margin-bottom: 20px;
+            }
+            .content__image{
+              width: 25%;
+            }
+            .contet__video{
+              width: 40%;
+              height: 60%;
+            }
+          }
+        }
       }
     }
   }
