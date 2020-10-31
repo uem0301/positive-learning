@@ -1,5 +1,20 @@
-<% @users.each do |user| %>
-    <div class="users_contents">
-        <%= user.name %>
-    </div>
+<% if params[:follower] %>
+    <p>フォロワー一覧</p>
+    <% @relationships.each do |relationship| %>
+        <% @user = User.find_by(id: relationship.follower_id) %>
+        <div class="users_contents">
+            <a href="/users/<%= @user.id %>%"><%= @user.name %></a>
+            <%= render "users/follow_form" %>
+        </div>
+        <br>
+    <% end %>
+<% elsif params[:following] %>
+    <p>フォロー一覧</p>
+    <% @relationships.each do |relationship| %>
+        <% @user = User.find_by(id: relationship.following_id) %>
+        <div class="users_contents">
+            <a href="/users/<%= @user.id %>%"><%= @user.name %></a>
+            <%= render "users/follow_form" %>
+        </div>
+    <% end %>
 <% end %>

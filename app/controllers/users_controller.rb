@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if params[:follower]
+      @relationships = Relationship.where(following_id: params[:user_id])
+    elsif params[:following]
+      @relationships = Relationship.where(follower_id: params[:user_id])
+    end
   end
 
   def show

@@ -4,10 +4,10 @@
     <div class="create_panel">
       <ul>
         <li>
-          <%= link_to 'Follow', root_path , class: "links_box" %> 
+          <%= link_to 'Follow', "/users?following=1&user_id=#{current_user.id}" , class: "links_box" %> 
         </li>
         <li>
-          <%= link_to 'Follower', root_path , class: "links_box" %> 
+          <%= link_to 'Follower', "/users?follower=1&user_id=#{current_user.id}" , class: "links_box" %> 
         </li>
         <li>
           <%= link_to 'Create Collection', new_collection_path , class: "links_box" %> 

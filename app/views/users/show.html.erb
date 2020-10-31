@@ -1,7 +1,4 @@
 <div class= "container">
-<%if user_signed_in? %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
-<%end%>
   <%= render partial: 'pages/header' %>
   <div class= "layout_wrapper">
     <div class= "left_layout">
@@ -12,7 +9,7 @@
             <span>ユーザー</span>
             <% if user_signed_in? && current_user %>
               <p class="name"> 
-                <%= current_user.name %>
+                <%= @user.name %>
               </p>
             <% end %>
           </div>
@@ -24,13 +21,13 @@
           <li>
             <p class="title">following</p>
             <div class="description">
-              <a href="#"><span id="following"><%= @user.following.count %></span></a>
+              <a href="/users?following=1&user_id=<%=@user.id%>"><span id="following"><%= @user.following.count %></span>人</a>
             </div>
           </li>
           <li>
             <p class="title">follower</p>
             <div class="description">
-              <a href="#"><span id="follower"><%= @user.followers.count %></span></a>
+              <a href="/users?follower=1&user_id=<%=@user.id%>"><span id="follower"><%= @user.followers.count %></span>人</a>
             </div>
           </li>
         </ul>
