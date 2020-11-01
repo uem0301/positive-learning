@@ -8,13 +8,12 @@
     <%= f.file_field :video, accept:'video/*',class:"item__form__videoLabel__field",style: "display:none;" %>
   <%= f.hidden_field :user_id, value: current_user.id%>
   <%= f.collection_select(:collection_id, Collection.all, :id, :name, prompt:true, class: "item__form__select") %>
-  <div class= "item__form__temporary">
-    <div class= "item__form__temporary--backBlack">
-      ジャンル
-    </div>
-    <div class= "item__form__temporary--borderBox">
-      例) Ruby
-    </div>
+  <div class="tag_field">
+    <% @tags.each do |t| %>
+      <%= f.label t.name, class:"label_check_box" %>
+      <%= check_box_tag "item[tag_ids][]", t.id, @item.tags.include?(t),class:"check_box" %>
+      <br/>
+    <% end %>
   </div>
   <%= f.submit "create  item", class: "item__form__submit"  %>
 <% end %>
