@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
+  get "items/:id" => "items#show"
+  get "collections/:id" => "collections#show"
 end

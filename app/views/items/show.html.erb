@@ -1,3 +1,4 @@
 <p>
-  <%= video_tag @item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true %>
+<%= @item.title %>
+<%= link_to(@item.explanation, item_path(@item)) %>
 </p>
