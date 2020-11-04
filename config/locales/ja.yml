@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+    attributes:
+      item:
+        title: "タイトル"
+        explanation: "アイテムの説明"
