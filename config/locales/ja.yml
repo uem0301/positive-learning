@@ -6,3 +6,5 @@ ja:
       item:
         title: "タイトル"
         explanation: "アイテムの説明"
+        image: "画像"
+        video: "動画"
