@@ -1,5 +1,7 @@
 <div class= "content">
-  <p> <%= image_tag collection.image.url, class:"content__image" %></p>
+  <% if  collection.image.present? %>
+    <p> <%= image_tag collection.image.url, class:"content__image" %></p>
+  <% end %>
   <div class= "content__name">
   <p><%= collection.name %> </p>
   </div>

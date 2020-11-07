@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to items_path
     else
+      @tags = Tag.all
       render :new
     end
   end
