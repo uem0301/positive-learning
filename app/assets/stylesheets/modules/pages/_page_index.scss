@@ -188,6 +188,9 @@
               border: 1px solid #ddd;
               margin-bottom: 30px;
             }
+            img{
+              height:150px;
+            }
             .timeline_card_video{
               padding: 10px;
               background-color: #fff;
@@ -199,10 +202,10 @@
               margin-bottom: 20px;
             }
             .content__image{
-              width: 25%;
+              width: 150px;
             }
             .contet__video{
-              width: 40%;
+              width: 100px;
               height: 60%;
             }
           }

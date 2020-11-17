@@ -26,7 +26,9 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @item = Item.where(collection_id: params[:id])
     @collection = Collection.find(params[:id])
+    @collections = Collection.includes(:user).order('created_at DESC').first(5)
   end
 
   def destroy

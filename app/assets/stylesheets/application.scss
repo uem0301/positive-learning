@@ -7,9 +7,16 @@
 @import "modules/collections/collection_new";
 @import "modules/collections/collection_index";
 
+// collection詳細ページ
+@import "modules/collections/collection_show";
+
 // item投稿ページ
 @import "modules/items/item_index";
 @import "modules/items/item_new";
+
+// item詳細ページ
+@import "modules/items/item_show";
+
 
 // Topページ
 @import "modules/pages/page_index";
