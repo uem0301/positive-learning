@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.where(id: params[:id])
   end
 
   def destroy
