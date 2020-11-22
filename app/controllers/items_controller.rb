@@ -39,10 +39,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.where(id: params[:id])
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
   end
 
   def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    flash[:success] = "投稿の削除を成功しました。"
+    redirect_to root_path
   end
 
   private

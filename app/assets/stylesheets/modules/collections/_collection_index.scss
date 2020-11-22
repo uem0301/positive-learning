@@ -3,13 +3,16 @@
 }
 
 .collections{
-  max-width: 800px;
+  width: 90%;
   display:flex;
   margin: 40px 0 0 100px;
   text-align: center;
   flex-wrap: wrap;
   .content{
     margin: 25px 40px 0 0;
+    .remove_box__posts{
+      margin-bottom:5px;
+    }
     &__image{
       margin-bottom: 5px;
       height:150px;
@@ -18,10 +21,15 @@
     &__name{
       margin-bottom:5px;
       border: 1px solid gray;
+      width: 170px;
+      height: 25px;
+      overflow: auto;
     }
     &__explanation{
       word-break: normal;
-      width:150px;
+      width:170px;
+      height: 40px;
+      overflow: auto;
     }
   }
 }

@@ -10,6 +10,9 @@
   width: 100%;
   .content{
     margin: 25px 60px 0 0;
+    .remove_box__posts{
+      margin-bottom:5px;
+    }
     &__image{
       margin-bottom: 5px;
       height: 125px;
@@ -21,16 +24,19 @@
       height: 100px;
     }
     &__name{
-      height: 20px;
-      width: 150px;
-      margin: 0 0 5px 5px;
       border: 1px solid gray;
+      height: 20px;
+      width: 170px;
+      margin: 0 0 5px 5px;
+      overflow: auto;
     }
     &__explanation{
       word-break: normal;
-      width: 150px;
       margin: 10px 5px 5px 8px;
       text-align: center;
+      width:170px;
+      height: 30px;
+      overflow: auto;
     }
   }
 }

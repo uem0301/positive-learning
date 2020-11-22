@@ -5,24 +5,29 @@
   <div class= "outline_container">
     <div class= "details_items">
       <div class= "item_video_wrapper">
-        <% @item.each do |item| %>
-          <% if item.image.present?%>
+        <% @items.each do |items| %>
+          <% if items.image.present?%>
             <div class= "details_items__image">
-              <%= image_tag ("#{item.image}") %>
+              <%= image_tag ("#{items.image}") %>
             </div>
           <% end %>
-          <% if item.video.present? %>
+          <% if items.video.present? %>
             <div class= "details_items__video">
-            <p> <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
+            <p> <%= video_tag items.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
             </div>
           <% end %>
       </div>
           <div class= "flex_wrapper">
+            <div class= "remove_box__posts">
+              <% if user_signed_in? && current_user.id == @item.user_id %>
+                <%= link_to '投稿削除', item_path(@item.id), method: :delete %>
+              <% end %>
+            </div>
             <div class= "details_items__title">
-              <p><%= item.title %></p>
+              <p><%= items.title %></p>
             </div>
             <div class= "details_items__explanation">
-              <p><%= item.explanation %></p>
+              <%= text_url_to_link(h(items.explanation)).html_safe %>
             </div>
           </div>
         <% end %>
@@ -30,7 +35,7 @@
     <div class= "comment_block">
       <div class= "comment_block__box">
        <form method="post" >
-        <textarea autofocus, name="kansou", rows="4", cols="40", placeholder= "コメントする", class= "post_comment"></textarea><br>
+        <textarea autofocus, name="comment", rows="4", cols="40", placeholder= "コメントする", class= "post_comment"></textarea><br>
         <input type="submit" value="送信",class= "submit">
        </form>
       </div>
@@ -43,12 +48,14 @@
               <div class= "comment_wrapper__user_text">test_text
               </div>
               <div class= "comment_wrapper__action_box">
-                <div class= "delete_button">削除
+                <div class= "delete_button">コメント削除
                 </div>
               </div>
             </div>
           </li>
         </ul>
+      </div>
     </div>
+
   </div>
 </div>

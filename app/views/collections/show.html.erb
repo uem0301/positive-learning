@@ -6,12 +6,19 @@
     <div class= "details_items">
       <% @item.each do |item| %>
         <% if item.image.present?%>
-          <%= link_to item_path(item), method: :get do %>
-            <p><%= image_tag item.image.url, class:"content__image" %></p>
-            <div class= "content__explanation">
-              <p><%= item.explanation %> </p>
+          <div class="remove_box">
+            <div class="remove_box__posts">
+              <% if user_signed_in? && current_user.id == item.user_id %>
+                <%= link_to '投稿削除', item_path(item.id), method: :delete %>
+              <% end %>
             </div>
-          <% end %>
+            <%= link_to item_path(item), method: :get do %>
+              <p><%= image_tag item.image.url, class:"content__image" %></p>
+              <div class= "content__explanation">
+                <p><%= text_url_to_link(h(item.explanation)).html_safe %></p>
+              </div>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     </div >

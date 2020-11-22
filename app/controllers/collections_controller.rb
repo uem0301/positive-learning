@@ -33,6 +33,17 @@ class CollectionsController < ApplicationController
   end
 
   def destroy
+    collection = Collection.find(params[:id])
+    if collection.present?
+        items = Item.where(collection_id: collection.id)
+        items.each do |item|
+          item.destroy
+        end
+        collection.destroy
+        redirect_to root_path, notice: "削除しました。"
+    else
+        redirect_to collections_path, notice: "削除できませんでした。"
+    end
   end
 
   private

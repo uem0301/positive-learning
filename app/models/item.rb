@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   validate :image_or_video_present?
-  has_many :item_tags
+  has_many :item_tags, dependent: :destroy 
   has_many :tags , through: :item_tags
   
   validates :title, presence: true
