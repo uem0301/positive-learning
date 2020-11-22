@@ -5,15 +5,15 @@
   <div class= "outline_container">
     <div class= "details_items">
       <div class= "item_video_wrapper">
-        <% @items.each do |items| %>
-          <% if items.image.present?%>
+        <% @items.each do |item| %>
+          <% if item.image.present?%>
             <div class= "details_items__image">
-              <%= image_tag ("#{items.image}") %>
+              <%= image_tag ("#{item.image}") %>
             </div>
           <% end %>
-          <% if items.video.present? %>
+          <% if item.video.present? %>
             <div class= "details_items__video">
-            <p> <%= video_tag items.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
+            <p> <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
             </div>
           <% end %>
       </div>
@@ -24,10 +24,10 @@
               <% end %>
             </div>
             <div class= "details_items__title">
-              <p><%= items.title %></p>
+              <p><%= item.title %></p>
             </div>
             <div class= "details_items__explanation">
-              <%= text_url_to_link(h(items.explanation)).html_safe %>
+              <%= text_url_to_link(h(item.explanation)).html_safe %>
             </div>
           </div>
         <% end %>

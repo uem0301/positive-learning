@@ -45,9 +45,12 @@ class ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    item.destroy
-    flash[:success] = "投稿の削除を成功しました。"
-    redirect_to root_path
+    if item.present?
+        item.destroy
+        redirect_to root_path, notice: "削除しました。"
+    else
+        redirect_to items_path, notice: "削除できませんでした。"
+    end
   end
 
   private
