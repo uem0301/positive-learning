@@ -1,0 +1,19 @@
+<div class= "container">
+  <div class= "logo_wrapper">
+    <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+  </div>
+  <div class= "details_wrapper">
+    <div class= "details_items">
+      <% @item.each do |item| %>
+        <% if item.image.present?%>
+          <%= link_to item_path(item), method: :get do %>
+            <p><%= image_tag item.image.url, class:"content__image" %></p>
+            <div class= "content__explanation">
+              <p><%= item.explanation %> </p>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div >
+  </div>
+</div>

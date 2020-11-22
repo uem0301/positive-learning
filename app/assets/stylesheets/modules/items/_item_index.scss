@@ -2,27 +2,35 @@
   box-sizing: border-box;
 }
 .items{
+  flex-wrap:wrap;
+  padding-left: 70px;
   display:flex;
   margin-top: 40px;
   text-align: center;
-  max-width: 800px;
+  width: 100%;
   .content{
     margin: 25px 60px 0 0;
     &__image{
       margin-bottom: 5px;
+      height: 125px;
+      width: 150px;
     }
     &__video{
       margin-top: 10px;
+      width: 150px;
+      height: 100px;
     }
     &__name{
-      width: 220px;
-      margin-bottom:5px;
+      height: 20px;
+      width: 150px;
+      margin: 0 0 5px 5px;
       border: 1px solid gray;
     }
     &__explanation{
       word-break: normal;
-      width:150px;
-      margin: 10px 0 5px 30px;
+      width: 150px;
+      margin: 10px 5px 5px 8px;
+      text-align: center;
     }
   }
 }

@@ -1,0 +1,25 @@
+.container{
+  .details_wrapper{
+    height: 100vh;
+    .details_items{
+      padding: 50px 10px 0px 30px;
+      display: flex;
+      width: 70%;
+      a{
+        text-decoration: none;
+        margin-right: 30px;
+      }
+      img{
+        height: 120px;
+        width: 120px;
+        border: 4px solid #333;
+        padding: 5px;
+        background-color: #fff;
+        box-shadow: 0 10px 7px -5px rgba(0,0,0,0.3);
+      }
+      p{
+        text-align:center;
+      }
+    }
+  }
+}

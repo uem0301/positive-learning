@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def show
+    # @collection = Collection.find(params[:id])
+    # @item = Item.find(params[:id])
   end
   
   private

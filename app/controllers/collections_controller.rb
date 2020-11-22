@@ -3,6 +3,7 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.includes(:user).order('created_at DESC')
+    @collection = Collection.includes(:items).order('created_at DESC')
   end
 
   def new
@@ -26,6 +27,9 @@ class CollectionsController < ApplicationController
   end
 
   def show
+    @item = Item.where(collection_id: params[:id])
+    @collection = Collection.find(params[:id])
+    @collections = Collection.includes(:user).order('created_at DESC')
   end
 
   def destroy

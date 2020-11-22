@@ -3,7 +3,7 @@
     <div class="flex_wrapper_left">
       <div class="menu_panel_button">
         <div class= "icon_menu">
-          <%= link_to pages_show_path(current_user) do %>
+          <%= link_to "/pages/show/#{current_user.id}" do %>
             <i class= "fas fa-bars fa-2x" ></i>
           <% end %>
         </div>

@@ -1,3 +1,54 @@
-<p>
-  <%= video_tag @item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true %>
-</p>
+<div class= "container">
+  <div class= "logo_wrapper">
+    <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+  </div>
+  <div class= "outline_container">
+    <div class= "details_items">
+      <div class= "item_video_wrapper">
+        <% @item.each do |item| %>
+          <% if item.image.present?%>
+            <div class= "details_items__image">
+              <%= image_tag ("#{item.image}") %>
+            </div>
+          <% end %>
+          <% if item.video.present? %>
+            <div class= "details_items__video">
+            <p> <%= video_tag item.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" %></p>
+            </div>
+          <% end %>
+      </div>
+          <div class= "flex_wrapper">
+            <div class= "details_items__title">
+              <p><%= item.title %></p>
+            </div>
+            <div class= "details_items__explanation">
+              <p><%= item.explanation %></p>
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <div class= "comment_block">
+      <div class= "comment_block__box">
+       <form method="post" >
+        <textarea autofocus, name="kansou", rows="4", cols="40", placeholder= "コメントする", class= "post_comment"></textarea><br>
+        <input type="submit" value="送信",class= "submit">
+       </form>
+      </div>
+      <div class= "comment_block__read_box">
+        <ul>
+          <li class= "comment_block__read_box__line">
+            <div class="comment_wrapper">
+              <div class= "comment_wrapper__user_name">test_name
+              </div>
+              <div class= "comment_wrapper__user_text">test_text
+              </div>
+              <div class= "comment_wrapper__action_box">
+                <div class= "delete_button">削除
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
