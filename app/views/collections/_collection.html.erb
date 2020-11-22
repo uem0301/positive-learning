@@ -1,4 +1,9 @@
 <div class= "content">
+  <div class= "remove_box__posts">
+    <% if user_signed_in? && current_user.id == collection.user_id %>
+      <%= link_to '投稿削除', collection_path(collection.id), method: :delete %>
+    <% end %>
+  </div>
   <%= link_to collection_path(collection.id), method: :get do %>
     <p> <%= image_tag collection.image.url, class:"content__image" %></p>
     <div class= "content__name">

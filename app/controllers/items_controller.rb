@@ -39,10 +39,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.where(id: params[:id])
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
   end
 
   def destroy
+    item = Item.find(params[:id])
+    if item.present?
+        item.destroy
+        redirect_to root_path, notice: "削除しました。"
+    else
+        redirect_to items_path, notice: "削除できませんでした。"
+    end
   end
 
   private
