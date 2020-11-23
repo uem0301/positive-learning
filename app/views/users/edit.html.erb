@@ -1,0 +1,18 @@
+<%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+
+<h3>プロフィール編集</h3>
+
+<div class="edit_profile">
+  <%= form_with model: @user do |form| %>
+    <div class="edit_profile__name">
+      <%= form.text_field :name %>
+    </div>
+    <div class="edit_profile__email">
+      <%= form.text_field :email %>
+    </div>
+    <div class="edit_profile__password">
+      <%= form.text_field :password, placeholder: "password" %>
+    </div>
+    <div><%= form.submit "保存" %></div>
+  <% end %>
+</div>

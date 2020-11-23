@@ -1,0 +1,21 @@
+*{
+  box-sizing:border-box;
+}
+
+h3{
+  margin-left: 45%;
+  margin-bottom:15px;
+}
+.edit_profile{
+  height: 100vh;
+  margin-left: 45%;
+  &__name{
+    margin-bottom:15px;
+  }
+  &__email{
+    margin-bottom:15px;
+  }
+  &__password{
+    margin-bottom:15px;
+  }
+}
