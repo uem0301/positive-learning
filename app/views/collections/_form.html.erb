@@ -5,6 +5,6 @@
     <%= f.label :image, "画像選択", class: "collection__form__label" %>
       <%= f.file_field :image, class:"collection__form__label__file" ,style: "display:none;"%>
     <%= f.hidden_field :user_id, value: current_user.id%>
-    <%= f.submit "create  collection", class: "collection__form__submit"  %>
+    <%= f.submit "送信", class: "collection__form__submit"  %>
   <% end %>
 <% end %>

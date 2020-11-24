@@ -2,6 +2,7 @@
   <div class= "remove_box__posts">
     <% if user_signed_in? && current_user.id == item.user_id %>
       <%= link_to '投稿削除', item_path(item.id), method: :delete %>
+      <%= link_to '投稿編集', edit_item_path(item.id) %>
     <% end %>
   </div>
   <%= link_to item_path(item), method: :get do %>

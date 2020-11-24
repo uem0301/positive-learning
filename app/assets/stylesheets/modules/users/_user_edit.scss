@@ -2,20 +2,30 @@
   box-sizing:border-box;
 }
 
-h3{
-  margin-left: 45%;
-  margin-bottom:15px;
+h2{
+  margin-left: 47%;
 }
-.edit_profile{
-  height: 100vh;
+.edit_user{
+  .actions{
+    margin: 20px 0 0 46%;
+  }
+ li{
   margin-left: 45%;
-  &__name{
-    margin-bottom:15px;
+ }
+}
+
+.user_removal{
+
+  h3{
+    margin-left: 47%;
   }
-  &__email{
-    margin-bottom:15px;
+
+  .actions{
+    margin: 20px 0 0 46%;
   }
-  &__password{
-    margin-bottom:15px;
+
+  .back{  
+    margin: 20px 0 0 46%;
+    margin-left: 56%;
   }
 }
