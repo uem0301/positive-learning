@@ -19,21 +19,23 @@ class CollectionsController < ApplicationController
   end
 
   def edit
-    # 編集時使用予定
-    # @collection = Collection.find(params[:image])
+    @collection = find_collction_by_id
   end
 
   def update
+    @collection = find_collction_by_id
+    @collection.update(collection_params)
+    redirect_to collections_path
   end
 
   def show
     @item = Item.where(collection_id: params[:id])
-    @collection = Collection.find(params[:id])
+    @collection = find_collction_by_id
     @collections = Collection.includes(:user).order('created_at DESC')
   end
 
   def destroy
-    collection = Collection.find(params[:id])
+    collection = find_collction_by_id
     if collection.present?
         items = Item.where(collection_id: collection.id)
         items.each do |item|
@@ -50,6 +52,10 @@ class CollectionsController < ApplicationController
 
   def collection_params
     params.require(:collection).permit(:name,:explanation,:user_id,:image)
+  end
+
+  def find_collction_by_id
+    Collection.find(params[:id])
   end
 
   def transition_destination

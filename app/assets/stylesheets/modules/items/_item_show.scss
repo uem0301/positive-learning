@@ -1,3 +1,7 @@
+*{
+  box-sizing:border-box;
+}
+
 .container{
   .outline_container{
     padding: 40px;
@@ -13,10 +17,12 @@
         box-shadow: 0 10px 7px -5px rgba(0,0,0,0.3);
         .details_items__image{
           border-bottom: solid 1px gray;
+          height: 160px;
+          padding-top: 10px;
           img{
             width: 150px;
             height: 130px;
-            margin-left: 110px;
+            margin-left: 30%;
           }
         }
         .details_items__video{
@@ -30,6 +36,9 @@
         padding: 20px 0 0 30px;
         .remove_box__posts{
           padding-bottom: 5px;
+          a{
+            margin-right:10px;
+          }
         }
         .details_items__title{
           border-bottom: 1px solid #333333;

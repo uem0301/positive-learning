@@ -10,8 +10,11 @@
   flex-wrap: wrap;
   .content{
     margin: 25px 40px 0 0;
+    a{
+      margin-right:10px;
+    }
     .remove_box__posts{
-      margin-bottom:5px;
+      margin-bottom:10px;
     }
     &__image{
       margin-bottom: 5px;

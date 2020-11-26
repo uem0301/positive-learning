@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   def new
     @tags = Tag.all
     @collection = Collection.new
+    @item = Item.new
   end
 
   def create
@@ -22,29 +23,22 @@ class ItemsController < ApplicationController
   
   def edit
     @tags = Tag.all
-    # 編集時使用予定
-    # @item = Item.find(params[:image,:video])
+    @item = find_item_by_id
   end
 
   def update
-    respond_to do |format|
-      if @item.update(article_params) && @item.video.recreate_versions!
-        format.html { redirect_to @item, notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    @item = find_item_by_id
+    @item.update((item_params))
+    redirect_to items_path
   end
 
   def show
     @items = Item.where(id: params[:id])
-    @item = Item.find(params[:id])
+    @item = find_item_by_id
   end
 
   def destroy
-    item = Item.find(params[:id])
+    item = find_item_by_id
     if item.present?
         item.destroy
         redirect_to root_path, notice: "削除しました。"
@@ -57,6 +51,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title,:explanation,:image,:video,:user_id,:collection_id, tag_ids: [])
+  end
+
+  def find_item_by_id
+    Item.find(params[:id])
   end
 
   def transition_destination
