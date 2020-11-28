@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_many :collections
   has_many :items
+  has_many :favorites,  dependent: :destroy
+  has_many :favorite_items, through: :favorites, source: :item
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
   has_many :following, through: :following_relationships
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy

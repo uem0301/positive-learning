@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   devise_for :users
   get "users/show" => "users#show"
   root 'pages#index'
   resources :collections
-  resources :items
+  resources :items do
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :users, only:[:index, :new, :show, :edit, :update] do
     member do
       get :following, :followers

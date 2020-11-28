@@ -32,6 +32,10 @@
           </li>
         </ul>
       </section>
+      <% @favorite_items.each do |item| %>
+        <hr>
+        <p><span>お気に入り内容: </span><%=link_to item.explanation, item_path(item.id) %></p>
+      <% end %>
       <div>
         <%= render "follow_form" %>
       </div>

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def show
     @collections = Collection.includes(:items).order('created_at DESC')
     @items = Item.order('created_at DESC')
+    @favorite_items = @user.favorite_items
   end
 
   def following

@@ -21,6 +21,9 @@
         <li>
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "links_box" %> 
         </li>
+        <li>
+          <%= link_to 'My Page', user_path(current_user), class: "links_box" %> 
+        </li>
       </ul>
     </div>
   </div>
