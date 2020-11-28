@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :transition_destination, only:[:new]
-
+  before_action :Find_Id_InTheItem, only:[:edit,:update,:show]
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -23,18 +23,15 @@ class ItemsController < ApplicationController
   
   def edit
     @tags = Tag.all
-    @item = find_item_by_id
   end
 
   def update
-    @item = find_item_by_id
     @item.update((item_params))
     redirect_to items_path
   end
 
   def show
     @items = Item.where(id: params[:id])
-    @item = find_item_by_id
   end
 
   def destroy
@@ -63,4 +60,8 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end  
+
+  def Find_Id_InTheItem
+    @item = find_item_by_id
+  end
 end
