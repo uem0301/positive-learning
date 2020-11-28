@@ -6,8 +6,8 @@ class User < ApplicationRecord
         #  :confirmable, :lockable, :timeoutable, :trackable
   validates :name, presence: true
 
-  has_many :collections
-  has_many :items
+  has_many :collections,  dependent: :destroy
+  has_many :items,  dependent: :destroy
   has_many :favorites,  dependent: :destroy
   has_many :favorite_items, through: :favorites, source: :item
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
