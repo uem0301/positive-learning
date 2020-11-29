@@ -10,8 +10,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    Comment.find_by(id: params[:id], item_id: params[:item_id]).destroy
-    redirect_to items_path
+    if Comment.find_by(id: params[:id], item_id: params[:item_id]).destroy
+      redirect_to items_path
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
