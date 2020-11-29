@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
-  get 'favorites/destroy'
   devise_for :users
   get "users/show" => "users#show"
   root 'pages#index'
