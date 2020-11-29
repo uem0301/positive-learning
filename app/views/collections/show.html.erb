@@ -15,8 +15,8 @@
             </div>
             <%= link_to item_path(item), method: :get do %>
               <p><%= image_tag item.image.url, class:"content__image" %></p>
-              <div class= "content__explanation">
-                <p><%= text_url_to_link(h(item.explanation)).html_safe %></p>
+              <div class= "content__name">
+                <p><%= item.title %> </p>
               </div>
             <% end %>
           </div>

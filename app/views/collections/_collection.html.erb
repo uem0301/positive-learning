@@ -8,10 +8,7 @@
   <%= link_to collection_path(collection.id), method: :get do %>
     <p> <%= image_tag collection.image.url, class:"content__image" %></p>
     <div class= "content__name">
-    <p><%= collection.name %> </p>
-    </div>
-    <div class= "content__explanation">
-    <p><%= collection.explanation %> </p>
+      <p><%= collection.name %> </p>
     </div>
   <% end %>
 </div>

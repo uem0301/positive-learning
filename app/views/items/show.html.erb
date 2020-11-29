@@ -51,7 +51,7 @@
           <h4>コメント</h4>
         </div>
         <div class= "comment_text">
-          <%= form_with model: [@item, @comment], method: :post do |f| %>
+          <%= form_with model: [@item, @comment], method: :post, local:true do |f| %>
             <%= f.text_area :content, autofocus: true %>
             <%= f.hidden_field :item_id, value: @item.id %>
             <%= f.submit 'コメントする', class: "comment_submit" %>
