@@ -6,6 +6,18 @@
     <div class= "details_items">
       <div class= "item_video_wrapper">
         <% @items.each do |item| %>
+          <div class= "favorites_box">
+            <% if user_signed_in? %>
+              <%= link_to "投稿者プロフィール", "/users/#{@item.user_id}" %>
+              <% if item.favorited_by?(current_user) %> 
+                  <p><span>お気に入り解除: </span><%=link_to item.favorites.count, item_favorites_path(item.id), method: :delete %></p>
+              <% else %>
+                  <p><span>お気に入り登録: </span><%=link_to item.favorites.count, item_favorites_path(item.id), method: :post %></p>
+              <% end %>
+            <% else %>
+              <p><span>お気に入り数: </span><%= item.favorites.count %></p>
+            <% end %>
+          </div>
           <% if item.image.present?%>
             <div class= "details_items__image">
               <%= image_tag ("#{item.image}") %>
@@ -31,6 +43,7 @@
               <%= text_url_to_link(h(item.explanation)).html_safe %>
             </div>
           </div>
+
         <% end %>
     </div>
     <div class= "comment_block">
