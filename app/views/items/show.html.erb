@@ -43,33 +43,39 @@
               <%= text_url_to_link(h(item.explanation)).html_safe %>
             </div>
           </div>
-
         <% end %>
     </div>
     <div class= "comment_block">
-      <div class= "comment_block__box">
-       <form method="post" >
-        <textarea autofocus, name="comment", rows="4", cols="40", placeholder= "コメントする", class= "post_comment"></textarea><br>
-        <input type="submit" value="送信",class= "submit">
-       </form>
+      <div class= "comment_section">
+        <div class= "comment_title">
+          <h4>コメント</h4>
+        </div>
+        <div class= "comment_text">
+          <%= form_with model: [@item, @comment], method: :post, local:true do |f| %>
+            <%= f.text_area :content, autofocus: true %>
+            <%= f.hidden_field :item_id, value: @item.id %>
+            <%= f.submit 'コメントする', class: "comment_submit" %>
+          <% end %>
+        </div>
       </div>
-      <div class= "comment_block__read_box">
-        <ul>
-          <li class= "comment_block__read_box__line">
-            <div class="comment_wrapper">
-              <div class= "comment_wrapper__user_name">test_name
+      <div class= "comment_wrapper">
+        <% @comments.each do |c| %>
+          <div class= "comment_wrapper__box">
+            <div class= "comment_wrapper__NameBox">
+              <div class= "comment_wrapper__NameBox__name">
+                <a href="/users/<%= c.user.id %>"><%= c.user.name %></a>
               </div>
-              <div class= "comment_wrapper__user_text">test_text
-              </div>
-              <div class= "comment_wrapper__action_box">
-                <div class= "delete_button">コメント削除
+              <% if user_signed_in? && current_user.id == c.user_id %>
+                <div class= "comment_wrapper__NameBox__delete">
+                  <p><%= link_to "コメント削除", item_comment_path(c.item.id, c.id), method: :delete %></p>
                 </div>
-              </div>
+              <% end %>
             </div>
-          </li>
-        </ul>
+              <p><span>コメント内容: </span><%= c.content %></p>
+          </div>
+        <% end %>
       </div>
     </div>
-
+    <hr>
   </div>
 </div>

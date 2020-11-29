@@ -6,7 +6,8 @@ class Item < ApplicationRecord
   validate :image_or_video_present?
   has_many :item_tags, dependent: :destroy 
   has_many :tags , through: :item_tags
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true
   validates :explanation, presence: true

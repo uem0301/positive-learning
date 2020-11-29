@@ -32,6 +32,9 @@ class ItemsController < ApplicationController
 
   def show
     @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
+    @comments = @item.comments
+    @comment = Comment.new
   end
 
   def destroy
