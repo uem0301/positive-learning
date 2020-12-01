@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update((item_params))
+    @item.update(item_params)
     redirect_to items_path
   end
 
@@ -45,6 +45,11 @@ class ItemsController < ApplicationController
     else
         redirect_to items_path, notice: "削除できませんでした。"
     end
+  end
+
+  def search
+    @search = Item.ransack(params[:q])
+    @search_items = @search.result(distinct: true)
   end
 
   private

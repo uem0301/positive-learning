@@ -1,0 +1,8 @@
+<% @search_items.each do |s| %>
+  <%= link_to item_path(s.id), method: :get do %>
+    <p> <%= image_tag s.image.url, class:"content__image" %> </p>
+    <p> <%= video_tag s.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "100%", width: "100%" unless s.video.blank? %></p>
+    <p><%= s.title %> </p>
+    </div>
+  <% end %>
+<% end %>

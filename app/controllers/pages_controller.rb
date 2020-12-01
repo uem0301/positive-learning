@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   def index
     @collections = Collection.includes(:items).order('created_at DESC')
     @items = Item.order('created_at DESC')
+    @search = Item.ransack(params[:q])
+    @search_items = @search.result(distinct: true)
   end
 
   def show
