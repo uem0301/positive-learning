@@ -1,16 +1,20 @@
 <h1>検索結果</h1>
 <div class= "search_results">
   <div class= "content">
-    <% @search_items.each do |s| %>
-      <div class= "content_box">
-        <%= link_to item_path(s.id), method: :get do %>
-          <p> <%= image_tag s.image.url, class:"content__image", height: "100%", width: "80%" %> </p>
-          <p> <%= video_tag s.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "20%", width: "20%" unless s.video.blank? %></p>
-          <div class= "content__explanation">
-            <p><%= s.explanation %> </p>
-          </div>
-        <% end %>
-      </div>
+    <% if @search_items.present?%>
+      <% @search_items.each do |s| %>
+        <div class= "content_box">
+          <%= link_to item_path(s.id), method: :get do %>
+            <p> <%= image_tag s.image.url, class:"content__image", height: "100%", width: "80%" %> </p>
+            <p> <%= video_tag s.video.url, type: "video/mp4", autoplay: true, muted: true, controls: true, preload: true, class:"content__video", height: "20%", width: "20%" unless s.video.blank? %></p>
+            <div class= "content__explanation">
+              <p><%= s.explanation %> </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to "お探しの投稿はありませんでした。TOPページへ戻る", '/', class: "back" %>
     <% end %>
   </div>
 </div>

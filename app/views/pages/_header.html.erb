@@ -25,12 +25,11 @@
       </div>
       <div class= "search">
         <%= search_form_for @search, url: search_items_path do |f| %>
-          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search_icon" %>
+          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search" %>
             <span class="icon-search_icon">
-              <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i>
             </span>
-          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "検索" %>
-          <%= f.submit "検索" , class: "form-submit" %>
+          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "投稿検索" %>
         <% end %>
       </div>
     </div>
@@ -48,13 +47,12 @@
         <%= link_to 'Login', new_user_session_path, class: "links_login" %> 
       </div>
       <div class= "search">
-        <%= search_form_for @q do |f| %>
-          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search_icon" %>
-          <span class="icon-search_icon">
-            <i class="fas fa-search"></i>
-          </span>
-          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "検索" %>
-          <%= f.submit "検索" %>
+        <%= search_form_for @search, url: search_items_path do |f| %>
+          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search" %>
+            <span class="icon-search_icon">
+                <i class="fas fa-search"></i>
+            </span>
+          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "投稿検索" %>
         <% end %>
       </div>
     </div>

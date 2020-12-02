@@ -65,22 +65,16 @@
         }
       }
       .search{
-        #search_form{
-          position: relative;
+        .item_search{
+          margin-right: 20px;
+          width: 130px;
+          .icon-search{
+            position: relative;
+            display: none;
+          }
           .icon-search_icon{
             position: absolute;
-            top: 4px;
-            left: 6px;
-            font-size: 16px;
-          }
-          .black_input{
-            border: none;
-            padding: 7px 10px 5px 50px;
-            font-size: 12px;
-            background-color: #eee;
-            border-bottom: 1px solid #000;
-            color: #333;
-            width: 160px;
+            margin: 8px 0 0 105px;
           }
         }
       }
