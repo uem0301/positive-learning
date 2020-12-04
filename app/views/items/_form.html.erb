@@ -7,7 +7,7 @@
   <%= f.label :video, "動画選択", class:"item__form__videoLabel" %>
     <%= f.file_field :video, accept:'video/*',class:"item__form__videoLabel__field",style: "display:none;" %>
   <%= f.hidden_field :user_id, value: current_user.id%>
-  <%= f.collection_select(:collection_id, Collection.all, :id, :name, prompt:true, class: "item__form__select") %>
+    <%= f.collection_select(:collection_id, Collection.where(user_id: current_user.id), :id, :name, prompt:true, class: "item__form__select") %>
   <div class="tag_field">
     <% if @tags.present? %>
       <% @tags.each do |t| %>
