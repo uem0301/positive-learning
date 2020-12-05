@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   validate :image_or_video_present?
+  validate :collection_present?
   has_many :item_tags, dependent: :destroy 
   has_many :tags , through: :item_tags
   has_many :favorites, dependent: :destroy
@@ -18,10 +19,15 @@ class Item < ApplicationRecord
 
   # 画像もしくは動画がない場合エラーとする
   def image_or_video_present?
-    p 'デバッグ'
-    p collection_id
-    if image.blank? && video.blank? && collection_id.blank?
-      errors.add(:error, "画像もしくは動画をアップロードとcollectionを選択してください。")
+    if image.blank? && video.blank?
+      errors.add(:error, "画像もしくは動画をアップロードを選択してください。")
+    end
+  end
+
+  # コレクションを選択していない場合エラーとする
+  def collection_present?
+    if collection_id.blank?
+      errors.add(:error, "コレクションを選択してください。")
     end
   end
 end
