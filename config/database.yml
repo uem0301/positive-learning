@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: positive_learning_production
-  username: positive_learning
-  password: <%= ENV['POSITIVE_LEARNING_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
