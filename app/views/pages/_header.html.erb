@@ -21,19 +21,16 @@
           <li>
             <%= link_to 'ITEM', items_path, class: "links_item" %> 
           </li>
-          <%# 現状でカテゴリー（TAG）が４つのみなのでリンクせずにコメントアウト %>
-          <%# <li> %>
-            <%# <%= link_to 'CATEGORY', root_path, class: "links_category" %> 
-          <%# </li> %>
         </ul>
       </div>
       <div class= "search">
-        <form id="search_form" action="/search" accept-charset="UTF-8" method="get",class= "s">
-          <span class="icon-search_icon">
-            <i class="fas fa-search"></i>
-          </span>
-          <input type="text" name="q" id="q" placeholder="入力してください" class="black_input">
-        </form>
+        <%= search_form_for @search, url: search_items_path do |f| %>
+          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search" %>
+            <span class="icon-search_icon">
+                <i class="fas fa-search"></i>
+            </span>
+          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "投稿検索" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -50,12 +47,13 @@
         <%= link_to 'Login', new_user_session_path, class: "links_login" %> 
       </div>
       <div class= "search">
-        <form id="search_form" action="/search" accept-charset="UTF-8" method="get",class= "s">
-          <span class="icon-search_icon">
-            <i class="fas fa-search"></i>
-          </span>
-          <input type="text" name="q" id="q" placeholder="入力してください" class="black_input">
-        </form>
+        <%= search_form_for @search, url: search_items_path do |f| %>
+          <%= f.label :title_or_explanation_cont, "Keyword", class: "icon-search" %>
+            <span class="icon-search_icon">
+                <i class="fas fa-search"></i>
+            </span>
+          <%= f.search_field :title_or_explanation_cont, class: "form-control", placeholder: "投稿検索" %>
+        <% end %>
       </div>
     </div>
   </div>
