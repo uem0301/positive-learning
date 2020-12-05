@@ -21,13 +21,13 @@
           <li>
             <p class="title">following</p>
             <div class="description">
-              <a href="#"></a>
+              <a href="/users?following=1&user_id=<%=current_user.id%>"><span id="following"><%= current_user.following.count %></span>人</a>
             </div>
           </li>
           <li>
             <p class="title">follower</p>
             <div class="description">
-              <a href="#"></a>
+              <a href="/users?follower=1&user_id=<%=current_user.id%>"><span id="follower"><%= current_user.followers.count %></span>人</a>
             </div>
           </li>
         </ul>

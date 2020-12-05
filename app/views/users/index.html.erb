@@ -1,20 +1,38 @@
 <% if params[:follower] %>
-    <p>フォロワー一覧</p>
+  <div class= "logo_wrapper">
+    <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+  </div>
+    <div class= "follower_title">フォロワー 一覧</div>
     <% @relationships.each do |relationship| %>
         <% @user = User.find_by(id: relationship.follower_id) %>
         <div class="users_contents">
-            <a href="/users/<%= @user.id %>%"><%= @user.name %></a>
-            <%= render "users/follow_form" %>
+            <div class= "users_wrapper">
+                <div class= "follower_name">
+                    <a href="/users/<%= @user.id %>"><%= @user.name %></a>
+                </div>
+                <div class= "follower_form">
+                    <%= render "users/follow_form" %>
+                </div>
+            </div>
         </div>
         <br>
     <% end %>
 <% elsif params[:following] %>
-    <p>フォロー一覧</p>
+  <div class= "logo_wrapper">
+    <%= link_to image_tag('logo.png', alt:"positive-learning", class: "service_logo"), '/' %>
+  </div>
+    <div class= "following_title">フォロー 一覧</div>
     <% @relationships.each do |relationship| %>
         <% @user = User.find_by(id: relationship.following_id) %>
         <div class="users_contents">
-            <a href="/users/<%= @user.id %>%"><%= @user.name %></a>
-            <%= render "users/follow_form" %>
+            <div class= "users_wrapper">
+                <div class= "following_name">
+                    <a href="/users/<%= @user.id %>"><%= @user.name %></a>
+                </div>
+                <div class= "following_form">
+                    <%= render "users/follow_form" %>
+                </div>
+            </div>
         </div>
     <% end %>
 <% end %>

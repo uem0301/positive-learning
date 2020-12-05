@@ -26,4 +26,7 @@
 @import "modules/pages/page_header";
 
 // ユーザー編集ページ
-@import "modules/users/user_edit"
+@import "modules/users/user_edit";
+
+// フォロー、フォロワー 一覧ページ
+@import "modules/users/user_index";
