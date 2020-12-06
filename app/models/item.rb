@@ -20,7 +20,7 @@ class Item < ApplicationRecord
   # 画像もしくは動画がない場合エラーとする
   def image_or_video_present?
     if image.blank? && video.blank?
-      errors.add(:error, "画像もしくは動画をアップロードを選択してください。")
+      errors.add(:error, "画像もしくは動画のアップロードを選択してください。")
     end
   end
 
