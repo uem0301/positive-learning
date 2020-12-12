@@ -6,6 +6,7 @@ class Collection < ApplicationRecord
   validate :image_present?
   validate :name_present?
   validate :explanation_present?
+  validates :name, :explanation, :image, :user, presence: true
 
   # 名前、説明、画像選択がない場合エラーとする
   def image_present?
