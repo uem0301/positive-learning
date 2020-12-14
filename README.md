@@ -4,54 +4,28 @@
  
 # DEMO
  
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+![](https://media.giphy.com/media/LFOPfvuDj44TEzsLum/giphy.gif)
  
+
 # Features
  
-"hoge"のセールスポイントや差別化などを説明する
- 
+ You can favorite information that you have compiled for your own learning, and follow people who are close to your learning level.
+
 # Requirement
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
+* ruby 2.6.5
+* Rails 6.0.3.4
  
 # Installation
  
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
- 
 # Usage
  
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
+The collection should describe the information as a room (e.g. programming), and the item should describe the information collected as its content (e.g. about Ruby errors).
  
 # Note
  
-注意点などがあれば書く
+Only the title and description of the item can be searched.
  
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
+
+
+ Thank you!
