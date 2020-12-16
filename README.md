@@ -13,9 +13,12 @@
 
 # Requirement
  
-* ruby 2.6.5
+* Ruby 2.6.5
 * Rails 6.0.3.4
-* mysql 14.14
+* MySQL 14.14
+* HTML 
+* Ruby Sass 3.7.4
+* AWS
 
 # Usage
  
