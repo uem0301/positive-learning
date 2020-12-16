@@ -15,9 +15,8 @@
  
 * ruby 2.6.5
 * Rails 6.0.3.4
- 
-# Installation
- 
+* mysql 14.14
+
 # Usage
  
 The collection should describe the information as a room (e.g. programming), and the item should describe the information collected as its content (e.g. about Ruby errors).
