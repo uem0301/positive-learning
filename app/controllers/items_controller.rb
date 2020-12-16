@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def show
     @items = Item.where(id: params[:id])
     @item = Item.find(params[:id])
-    @comments = @item.comments
+    @comments = @item.comments.includes(:user)
     @comment = Comment.new
   end
 
