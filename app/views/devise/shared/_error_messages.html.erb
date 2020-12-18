@@ -7,10 +7,10 @@
         %>
       </div>    
 
-    <div class= "error_messages, style= "margin: 20px 0 0 45%;>
-      <ul style= "margin: 20px 0 0 45%;">
+    <div class= "error_messages, style= "margin: 20px 0 0 45%;">
+      <ul >
         <% resource.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li, style= "margin: 20px 0 0 45%;"><%= message %></li>
         <% end %>
       </ul>
     </div>
