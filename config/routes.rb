@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers:{
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
   get "users/show" => "users#show"
   root 'pages#index'
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   resources :collections
   resources :items do
     resource :favorites, only: [:create, :destroy]
