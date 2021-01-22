@@ -1,10 +1,10 @@
 .service_logo{
-  padding-left:43%;
+  padding-left:42%;
   padding-top:3%;
 }
 
 .sign_in_up{
-  margin-left: 46%;
+  margin-left: 44%;
   padding-top:1%;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .field{
-  margin-left: 46%;
+  margin-left: 44%;
   padding-top: 15px;
   .check_box{
     width: 50px;
@@ -23,7 +23,7 @@
 
 
 .sign{
-  margin-left: 46%;
+  margin-left: 44%;
   background-color: #ffcce6;
   width: 190px;
   margin-top: 15px;
@@ -31,3 +31,13 @@
   border-style: none;
 }
 
+.guest_sign_in{
+  margin-left: 44%;
+  background-color: #77FFFF;
+  width: 190px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border-style: none;
+  text-align: center;
+  color: black;
+}
