@@ -3,7 +3,7 @@
 }
 
 .following_title,.follower_title{
-  margin-left: 43%;
+  margin-left: 44%;
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -14,9 +14,10 @@
 }
 
 .users_contents{
-  margin-left: 45%;
+  margin-left: 41%;
   width: 230px;
   .users_wrapper{
+    width:270px;
     margin-bottom: 20px;
     border: 1px solid;
     display:flex;
@@ -24,10 +25,10 @@
     border-radius: 100vh;
     height: 45px;
     .following_name{
-      padding: 10px;
+      padding:10px 0 0 10px;
     }
     .following_form{
-      padding: 5px 5px 1px 0;
+      padding: 5px 5px 5px 0;
       .btn-outline-secondary{
         margin-right: 3px;
         padding: 5px 5px 1px 0;
@@ -40,10 +41,10 @@
     }
 
     .follower_name{
-      padding: 10px;
+      padding:10px 0 0 10px;
     }
     .follower_form{
-      padding: 5px 5px 1px 0;
+      padding: 5px 5px 5px 0;
       .btn-outline-secondary{
         margin-right: 3px;
         padding: 5px 5px 1px 0;
