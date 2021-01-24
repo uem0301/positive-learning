@@ -2,8 +2,8 @@
   box-sizing:border-box;
 }
 
-h2{
-  margin-left: 47%;
+.user_edit_title{
+  margin-left: 45%;
 }
 .edit_user{
   margin-left: 20px;
@@ -16,7 +16,7 @@ h2{
 }
 
 .user_removal{
-  margin-left: 20px;
+  margin-right: 23px;
   h3{
     margin-left: 47%;
   }
@@ -27,5 +27,8 @@ h2{
 
   .back{  
     margin: 20px 0 0 50%;
+  }
+  .button_to{
+    margin-left: 3px;
   }
 }
